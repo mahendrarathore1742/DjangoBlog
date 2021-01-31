@@ -1,0 +1,53 @@
+{% extends 'Import.html' %}
+{% block title %} Search Result {% endblock %}
+{% block body %} 
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong> Message : - {{ message }}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %}
+  <section class="POSTDetail" >
+<div class="card POSTDetail">
+  
+  
+    <span><h3>Search Result:-</h3></span><br><br>
+
+         {% if allpost|length < 1 %}
+         <p>No Search Result avaliable</p>
+         Your search - {{query}}- did not match any documents.<br><br>
+        Suggestions:
+        <li>Try different keywords.</li>
+         {% endif %}
+
+
+      {% for obj in allpost %}
+
+  <p> <b>  {{ obj.published_date }} </b></p>
+
+      <div class=" flex flex-wrap md:flex-no-wrap">
+        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+          <span class="text-2xl font-medium text-black title-font mb-2">{{ obj.Category }}</span> 
+        </div>
+        <div class="md:flex-grow">
+          <h2 class="text-2xl font-medium text-black title-font mb-2">{{ obj.Title }}</h2><br>
+           {{ obj.Content|truncatewords:100|safe  }}     <p> <b> POST By  {{ obj.author }} </b></p>
+       
+          <a class="text-indigo-500 inline-flex items-center mt-4" href="/listofallpost/{{ obj.slug }}">Learn More
+             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"> 
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a> <hr style="border:1px solid black;">
+        </div> 
+      </div>
+    
+      {% endfor %}
+    </div>  
+
+</section>
+{% endblock %}

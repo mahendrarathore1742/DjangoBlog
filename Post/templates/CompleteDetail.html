@@ -1,0 +1,15 @@
+{% extends 'Import.html' %}
+{% block title %} {{object.Title}} {% endblock %}
+{% block body %} 
+  <section class="POSTDetail" >
+<div class="card POSTDetail">
+  
+	<div class="container">
+		<span>{{object.Category}}</span><br><br>
+	 <h3><b>{{object.Title}}</b></h3>  <span> By {{object.author}}</span> <hr><br>
+<center><img src="{{  object.cover_image.url }}"  alt="Image" style="width: 70%;"></center><br><br>	
+		{{object.Content|safe}}
+  	</div>	
+</div>
+</section>
+{% endblock %}

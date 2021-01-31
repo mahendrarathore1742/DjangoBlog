@@ -1,0 +1,74 @@
+body{
+	background-color: #fff;
+	color: black;
+
+}
+.Text h1{
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.84);
+    font-size: 70px;
+    line-height: 80px;
+    font-family: medium-marketing-display-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    text-align: center;
+    padding-top: 50px;
+    font-weight: 700;  
+}
+
+.Ptext{
+	text-align: center;
+	padding-top: 20px;
+	font-weight: 500; 
+	font-size: 22px;
+
+}
+
+.has{
+	 height: 30px;
+  width: 30px;
+ background-color: black;
+ color: white;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  padding: 3px;
+
+
+
+}
+.Allhastag{
+	background-color: rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, 0.54);
+	padding: 7px;
+	height: auto;
+	width: auto;
+	border-radius: 30px;
+}
+.Allhastag:hover{
+	background-color: #bba;
+	cursor: pointer;
+	}
+
+
+@media screen and (max-width: 480px) {
+  .hide {
+    display: none;
+    margin: 0;
+  }
+}
+ 
+
+.getSignup{
+    background-color: rgba(3, 168, 124, 1);
+    color: white;
+}
+.getSignup:hover{
+ background-color: rgba(3, 168, 124, 1);
+}
+
+.GetStart{
+      padding-top: 50px;
+}
+
+.newpost{
+  margin-top: 50px;
+}
